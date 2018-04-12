@@ -1,0 +1,8 @@
+E:\akshaydbs\basicform\basicform\bin\Debug\basicform.exe.config
+E:\akshaydbs\basicform\basicform\bin\Debug\basicform.exe
+E:\akshaydbs\basicform\basicform\bin\Debug\basicform.pdb
+E:\akshaydbs\basicform\basicform\obj\Debug\basicform.Form1.resources
+E:\akshaydbs\basicform\basicform\obj\Debug\basicform.Properties.Resources.resources
+E:\akshaydbs\basicform\basicform\obj\Debug\basicform.csproj.GenerateResource.Cache
+E:\akshaydbs\basicform\basicform\obj\Debug\basicform.exe
+E:\akshaydbs\basicform\basicform\obj\Debug\basicform.pdb

@@ -1,0 +1,1252 @@
+SQL> lab 4
+SP2-0042: unknown command "lab 4" - rest of line ignored.
+SQL> select name as onm , count(report_num)  as ano , sum(damg_amt
+  2  ;
+
+*
+ERROR at line 2:
+ORA-00907: missing right parenthesis
+
+
+SQL> select * from parti3110;
+
+DRIVER_ID  REGNO      REPORT_NUM    DAM_AMT
+---------- ---------- ---------- ----------
+1          11                111          0
+2          12                112          0
+4          14                114          0
+5          15                115          0
+
+SQL> select name as onm , count(report_num)  as ano , sum(dam_amt) as dmg
+  2  from person3110 , parti3110
+  3  where person3110.driver_id = parti3110.driver_id
+  4  group by(name , report_num , dam_amt)
+  5  order by amg desc();
+order by amg desc()
+                 *
+ERROR at line 5:
+ORA-00933: SQL command not properly ended
+
+
+SQL> select name as onm , count(report_num)  as ano , sum(dam_amt) as dmg ,
+  2  from person3110 , parti3110,
+  3  where person3110.driver_id = parti3110.driver_id,
+  4  group by(name , report_num , dam_amt),
+  5  order by amg desc();
+from person3110 , parti3110,
+*
+ERROR at line 2:
+ORA-00936: missing expression
+
+
+SQL> select name as onm , count(report_num)  as ano , sum(dam_amt) as dmg ,
+  2  from person3110 , parti3110
+  3  where person3110.driver_id = parti3110.driver_id
+  4  group by(name , report_num , dam_amt)
+  5  order by amg desc();
+from person3110 , parti3110
+*
+ERROR at line 2:
+ORA-00936: missing expression
+
+
+SQL> select name as onm , count(report_num)  as ano , sum(dam_amt) as dmg
+  2  from person3110 , parti3110
+  3  where person3110.driver_id = parti3110.driver_id
+  4  group by(name , report_num , dam_amt)
+  5  order by amg desc();
+order by amg desc()
+                 *
+ERROR at line 5:
+ORA-00933: SQL command not properly ended
+
+
+SQL> select name as onm , count(report_num)  as ano , sum(dam_amt) as dmg
+  2  from person3110 , parti3110
+  3  where person3110.driver_id = parti3110.driver_id
+  4  group by(name , report_num , dam_amt)
+  5  order by amg des();
+order by amg des()
+             *
+ERROR at line 5:
+ORA-00933: SQL command not properly ended
+
+
+SQL> select name as onm , count(report_num)  as ano , sum(dam_amt) as dmg
+  2  from person3110 , parti3110
+  3  where person3110.driver_id = parti3110.driver_id
+  4  group by(name , report_num , dam_amt)
+  5  order by dmg des();
+order by dmg des()
+             *
+ERROR at line 5:
+ORA-00933: SQL command not properly ended
+
+
+SQL> select name as onm , count(report_num)  as ano , sum(dam_amt) as dmg
+  2  from person3110 , parti3110
+  3  where person3110.driver_id = parti3110.driver_id
+  4  group by(name , report_num , dam_amt)
+  5  order by dmg desc();
+order by dmg desc()
+                 *
+ERROR at line 5:
+ORA-00933: SQL command not properly ended
+
+
+SQL> select name as onm , count(report_num)  as ano , sum(dam_amt) as dmg
+  2  from person3110 , parti3110
+  3  where person3110.driver_id = parti3110.driver_id
+  4  group by ( name , report_num , dam_amt)
+  5  order by dmg desc();
+order by dmg desc()
+                 *
+ERROR at line 5:
+ORA-00933: SQL command not properly ended
+
+
+SQL> select name as onm , count(report_num)  as ano , sum(dam_amt) as dmg
+  2  from person3110 , parti3110
+  3  where person3110.driver_id = parti3110.driver_id
+  4  group by(name , report_num , dam_amt)
+  5  order by dmg desc;
+
+ONM                         ANO        DMG
+-------------------- ---------- ----------
+Akshay                        1          0
+Adhish                        1          0
+Aakash                        1          0
+Haran                         1          0
+
+SQL> commit;
+
+Commit complete.
+
+SQL> select name as nm
+  2  from person3110 , parti3110
+  3  where person3110.driver_id <> parti3110.driver_id
+  4  ;
+
+NM
+--------------------
+Akshay
+Akshay
+Akshay
+Adhish
+Adhish
+Adhish
+Kartik
+Kartik
+Kartik
+Kartik
+Haran
+
+NM
+--------------------
+Haran
+Haran
+Aakash
+Aakash
+Aakash
+
+16 rows selected.
+
+SQL> count(regno) as r
+SP2-0734: unknown command beginning "count(regn..." - rest of line ignored.
+SQL> count(regno) as r
+SP2-0734: unknown command beginning "count(regn..." - rest of line ignored.
+SQL> select count(regno) as r
+  2  from owns3110 , parti3110
+  3  where owns3110.regno = parti3110;
+where owns3110.regno = parti3110
+                       *
+ERROR at line 3:
+ORA-00904: "PARTI3110": invalid identifier
+
+
+SQL> select count(regno) as r
+  2  from owns3110 , parti3110
+  3  where owns3110.regno = parti3110.regno;
+select count(regno) as r
+             *
+ERROR at line 1:
+ORA-00918: column ambiguously defined
+
+
+SQL> select count(*)
+  2  from owns3110 , parti3110
+  3  where owns3110.regno = parti3110.regno;
+
+  COUNT(*)
+----------
+         4
+
+SQL> select count(*) as NumberOf
+  2  from owns3110 , parti3110
+  3  where owns3110.regno = parti3110.regno;
+
+  NUMBEROF
+----------
+         4
+
+SQL> select count(*) as NumberOf
+  2  from owns3110 , parti3110
+  3  where owns3110.regno = parti3110.regno and
+  4  rn = (select report_num from accident3110 where extract(year from accd_date
+) = 2015)
+  5  and parti3110.report_num = rn ;
+and parti3110.report_num = rn
+                           *
+ERROR at line 5:
+ORA-00904: "RN": invalid identifier
+
+
+SQL> select count(*) as NumberOf
+  2  from owns3110 , parti3110
+  3  where owns3110.regno = parti3110.regno and
+  4  report_num = (select report_num from accident3110 where extract(year from a
+ccd_date) = 2015)
+  5  and parti3110.report_num = report_num ;
+report_num = (select report_num from accident3110 where extract(year from accd_d
+ate) = 2015)
+              *
+ERROR at line 4:
+ORA-01427: single-row subquery returns more than one row
+
+
+SQL> select count( regno ) as NumberOf
+  2  from owns3110
+  3  where owns3110.regno = parti3110.regno and
+  4  report_num = (select report_num from accident3110 where extract(year from a
+ccd_date) = 2015)
+  5  and parti3110.report_num = report_num ;
+and parti3110.report_num = report_num
+                           *
+ERROR at line 5:
+ORA-00904: "REPORT_NUM": invalid identifier
+
+
+SQL> select count(report_num) from parti3110 where year = extract(year from accd
+_date) = 2015);
+select count(report_num) from parti3110 where year = extract(year from accd_date
+) = 2015)
+
+  *
+ERROR at line 1:
+ORA-00933: SQL command not properly ended
+
+
+SQL> select count(report_num) from accident3110 where year = extract(year from a
+ccd_date) = 2015);
+select count(report_num) from accident3110 where year = extract(year from accd_d
+ate) = 2015)
+
+     *
+ERROR at line 1:
+ORA-00933: SQL command not properly ended
+
+
+SQL>
+
+SQL> lab 4
+SP2-0042: unknown command "lab 4" - rest of line ignored.
+SQL> select name as onm , count(report_num)  as ano , sum(damg_amt
+  2  ;
+
+*
+ERROR at line 2:
+ORA-00907: missing right parenthesis
+
+
+SQL> select * from parti3110;
+
+DRIVER_ID  REGNO      REPORT_NUM    DAM_AMT
+---------- ---------- ---------- ----------
+1          11                111          0
+2          12                112          0
+4          14                114          0
+5          15                115          0
+
+SQL> select name as onm , count(report_num)  as ano , sum(dam_amt) as dmg
+  2  from person3110 , parti3110
+  3  where person3110.driver_id = parti3110.driver_id
+  4  group by(name , report_num , dam_amt)
+  5  order by amg desc();
+order by amg desc()
+                 *
+ERROR at line 5:
+ORA-00933: SQL command not properly ended
+
+
+SQL> select name as onm , count(report_num)  as ano , sum(dam_amt) as dmg ,
+  2  from person3110 , parti3110,
+  3  where person3110.driver_id = parti3110.driver_id,
+  4  group by(name , report_num , dam_amt),
+  5  order by amg desc();
+from person3110 , parti3110,
+*
+ERROR at line 2:
+ORA-00936: missing expression
+
+
+SQL> select name as onm , count(report_num)  as ano , sum(dam_amt) as dmg ,
+  2  from person3110 , parti3110
+  3  where person3110.driver_id = parti3110.driver_id
+  4  group by(name , report_num , dam_amt)
+  5  order by amg desc();
+from person3110 , parti3110
+*
+ERROR at line 2:
+ORA-00936: missing expression
+
+
+SQL> select name as onm , count(report_num)  as ano , sum(dam_amt) as dmg
+  2  from person3110 , parti3110
+  3  where person3110.driver_id = parti3110.driver_id
+  4  group by(name , report_num , dam_amt)
+  5  order by amg desc();
+order by amg desc()
+                 *
+ERROR at line 5:
+ORA-00933: SQL command not properly ended
+
+
+SQL> select name as onm , count(report_num)  as ano , sum(dam_amt) as dmg
+  2  from person3110 , parti3110
+  3  where person3110.driver_id = parti3110.driver_id
+  4  group by(name , report_num , dam_amt)
+  5  order by amg des();
+order by amg des()
+             *
+ERROR at line 5:
+ORA-00933: SQL command not properly ended
+
+
+SQL> select name as onm , count(report_num)  as ano , sum(dam_amt) as dmg
+  2  from person3110 , parti3110
+  3  where person3110.driver_id = parti3110.driver_id
+  4  group by(name , report_num , dam_amt)
+  5  order by dmg des();
+order by dmg des()
+             *
+ERROR at line 5:
+ORA-00933: SQL command not properly ended
+
+
+SQL> select name as onm , count(report_num)  as ano , sum(dam_amt) as dmg
+  2  from person3110 , parti3110
+  3  where person3110.driver_id = parti3110.driver_id
+  4  group by(name , report_num , dam_amt)
+  5  order by dmg desc();
+order by dmg desc()
+                 *
+ERROR at line 5:
+ORA-00933: SQL command not properly ended
+
+
+SQL> select name as onm , count(report_num)  as ano , sum(dam_amt) as dmg
+  2  from person3110 , parti3110
+  3  where person3110.driver_id = parti3110.driver_id
+  4  group by ( name , report_num , dam_amt)
+  5  order by dmg desc();
+order by dmg desc()
+                 *
+ERROR at line 5:
+ORA-00933: SQL command not properly ended
+
+
+SQL> select name as onm , count(report_num)  as ano , sum(dam_amt) as dmg
+  2  from person3110 , parti3110
+  3  where person3110.driver_id = parti3110.driver_id
+  4  group by(name , report_num , dam_amt)
+  5  order by dmg desc;
+
+ONM                         ANO        DMG
+-------------------- ---------- ----------
+Akshay                        1          0
+Adhish                        1          0
+Aakash                        1          0
+Haran                         1          0
+
+SQL> commit;
+
+Commit complete.
+
+SQL> select name as nm
+  2  from person3110 , parti3110
+  3  where person3110.driver_id <> parti3110.driver_id
+  4  ;
+
+NM
+--------------------
+Akshay
+Akshay
+Akshay
+Adhish
+Adhish
+Adhish
+Kartik
+Kartik
+Kartik
+Kartik
+Haran
+
+NM
+--------------------
+Haran
+Haran
+Aakash
+Aakash
+Aakash
+
+16 rows selected.
+
+SQL> count(regno) as r
+SP2-0734: unknown command beginning "count(regn..." - rest of line ignored.
+SQL> count(regno) as r
+SP2-0734: unknown command beginning "count(regn..." - rest of line ignored.
+SQL> select count(regno) as r
+  2  from owns3110 , parti3110
+  3  where owns3110.regno = parti3110;
+where owns3110.regno = parti3110
+                       *
+ERROR at line 3:
+ORA-00904: "PARTI3110": invalid identifier
+
+
+SQL> select count(regno) as r
+  2  from owns3110 , parti3110
+  3  where owns3110.regno = parti3110.regno;
+select count(regno) as r
+             *
+ERROR at line 1:
+ORA-00918: column ambiguously defined
+
+
+SQL> select count(*)
+  2  from owns3110 , parti3110
+  3  where owns3110.regno = parti3110.regno;
+
+  COUNT(*)
+----------
+         4
+
+SQL> select count(*) as NumberOf
+  2  from owns3110 , parti3110
+  3  where owns3110.regno = parti3110.regno;
+
+  NUMBEROF
+----------
+         4
+
+SQL> select count(*) as NumberOf
+  2  from owns3110 , parti3110
+  3  where owns3110.regno = parti3110.regno and
+  4  rn = (select report_num from accident3110 where extract(year from accd_date
+) = 2015)
+  5  and parti3110.report_num = rn ;
+and parti3110.report_num = rn
+                           *
+ERROR at line 5:
+ORA-00904: "RN": invalid identifier
+
+
+SQL> select count(*) as NumberOf
+  2  from owns3110 , parti3110
+  3  where owns3110.regno = parti3110.regno and
+  4  report_num = (select report_num from accident3110 where extract(year from a
+ccd_date) = 2015)
+  5  and parti3110.report_num = report_num ;
+report_num = (select report_num from accident3110 where extract(year from accd_d
+ate) = 2015)
+              *
+ERROR at line 4:
+ORA-01427: single-row subquery returns more than one row
+
+
+SQL> select count( regno ) as NumberOf
+  2  from owns3110
+  3  where owns3110.regno = parti3110.regno and
+  4  report_num = (select report_num from accident3110 where extract(year from a
+ccd_date) = 2015)
+  5  and parti3110.report_num = report_num ;
+and parti3110.report_num = report_num
+                           *
+ERROR at line 5:
+ORA-00904: "REPORT_NUM": invalid identifier
+
+
+SQL> select count(report_num) from parti3110 where year = extract(year from accd
+_date) = 2015);
+select count(report_num) from parti3110 where year = extract(year from accd_date
+) = 2015)
+
+  *
+ERROR at line 1:
+ORA-00933: SQL command not properly ended
+
+
+SQL> select count(report_num) from accident3110 where year = extract(year from a
+ccd_date) = 2015);
+select count(report_num) from accident3110 where year = extract(year from accd_d
+ate) = 2015)
+
+     *
+ERROR at line 1:
+ORA-00933: SQL command not properly ended
+
+
+SQL>SQL> lab 4
+SP2-0042: unknown command "lab 4" - rest of line ignored.
+SQL> select name as onm , count(report_num)  as ano , sum(damg_amt
+  2  ;
+
+*
+ERROR at line 2:
+ORA-00907: missing right parenthesis
+
+
+SQL> select * from parti3110;
+
+DRIVER_ID  REGNO      REPORT_NUM    DAM_AMT
+---------- ---------- ---------- ----------
+1          11                111          0
+2          12                112          0
+4          14                114          0
+5          15                115          0
+
+SQL> select name as onm , count(report_num)  as ano , sum(dam_amt) as dmg
+  2  from person3110 , parti3110
+  3  where person3110.driver_id = parti3110.driver_id
+  4  group by(name , report_num , dam_amt)
+  5  order by amg desc();
+order by amg desc()
+                 *
+ERROR at line 5:
+ORA-00933: SQL command not properly ended
+
+
+SQL> select name as onm , count(report_num)  as ano , sum(dam_amt) as dmg ,
+  2  from person3110 , parti3110,
+  3  where person3110.driver_id = parti3110.driver_id,
+  4  group by(name , report_num , dam_amt),
+  5  order by amg desc();
+from person3110 , parti3110,
+*
+ERROR at line 2:
+ORA-00936: missing expression
+
+
+SQL> select name as onm , count(report_num)  as ano , sum(dam_amt) as dmg ,
+  2  from person3110 , parti3110
+  3  where person3110.driver_id = parti3110.driver_id
+  4  group by(name , report_num , dam_amt)
+  5  order by amg desc();
+from person3110 , parti3110
+*
+ERROR at line 2:
+ORA-00936: missing expression
+
+
+SQL> select name as onm , count(report_num)  as ano , sum(dam_amt) as dmg
+  2  from person3110 , parti3110
+  3  where person3110.driver_id = parti3110.driver_id
+  4  group by(name , report_num , dam_amt)
+  5  order by amg desc();
+order by amg desc()
+                 *
+ERROR at line 5:
+ORA-00933: SQL command not properly ended
+
+
+SQL> select name as onm , count(report_num)  as ano , sum(dam_amt) as dmg
+  2  from person3110 , parti3110
+  3  where person3110.driver_id = parti3110.driver_id
+  4  group by(name , report_num , dam_amt)
+  5  order by amg des();
+order by amg des()
+             *
+ERROR at line 5:
+ORA-00933: SQL command not properly ended
+
+
+SQL> select name as onm , count(report_num)  as ano , sum(dam_amt) as dmg
+  2  from person3110 , parti3110
+  3  where person3110.driver_id = parti3110.driver_id
+  4  group by(name , report_num , dam_amt)
+  5  order by dmg des();
+order by dmg des()
+             *
+ERROR at line 5:
+ORA-00933: SQL command not properly ended
+
+
+SQL> select name as onm , count(report_num)  as ano , sum(dam_amt) as dmg
+  2  from person3110 , parti3110
+  3  where person3110.driver_id = parti3110.driver_id
+  4  group by(name , report_num , dam_amt)
+  5  order by dmg desc();
+order by dmg desc()
+                 *
+ERROR at line 5:
+ORA-00933: SQL command not properly ended
+
+
+SQL> select name as onm , count(report_num)  as ano , sum(dam_amt) as dmg
+  2  from person3110 , parti3110
+  3  where person3110.driver_id = parti3110.driver_id
+  4  group by ( name , report_num , dam_amt)
+  5  order by dmg desc();
+order by dmg desc()
+                 *
+ERROR at line 5:
+ORA-00933: SQL command not properly ended
+
+
+SQL> select name as onm , count(report_num)  as ano , sum(dam_amt) as dmg
+  2  from person3110 , parti3110
+  3  where person3110.driver_id = parti3110.driver_id
+  4  group by(name , report_num , dam_amt)
+  5  order by dmg desc;
+
+ONM                         ANO        DMG
+-------------------- ---------- ----------
+Akshay                        1          0
+Adhish                        1          0
+Aakash                        1          0
+Haran                         1          0
+
+SQL> commit;
+
+Commit complete.
+
+SQL> select name as nm
+  2  from person3110 , parti3110
+  3  where person3110.driver_id <> parti3110.driver_id
+  4  ;
+
+NM
+--------------------
+Akshay
+Akshay
+Akshay
+Adhish
+Adhish
+Adhish
+Kartik
+Kartik
+Kartik
+Kartik
+Haran
+
+NM
+--------------------
+Haran
+Haran
+Aakash
+Aakash
+Aakash
+
+16 rows selected.
+
+SQL> count(regno) as r
+SP2-0734: unknown command beginning "count(regn..." - rest of line ignored.
+SQL> count(regno) as r
+SP2-0734: unknown command beginning "count(regn..." - rest of line ignored.
+SQL> select count(regno) as r
+  2  from owns3110 , parti3110
+  3  where owns3110.regno = parti3110;
+where owns3110.regno = parti3110
+                       *
+ERROR at line 3:
+ORA-00904: "PARTI3110": invalid identifier
+
+
+SQL> select count(regno) as r
+  2  from owns3110 , parti3110
+  3  where owns3110.regno = parti3110.regno;
+select count(regno) as r
+             *
+ERROR at line 1:
+ORA-00918: column ambiguously defined
+
+
+SQL> select count(*)
+  2  from owns3110 , parti3110
+  3  where owns3110.regno = parti3110.regno;
+
+  COUNT(*)
+----------
+         4
+
+SQL> select count(*) as NumberOf
+  2  from owns3110 , parti3110
+  3  where owns3110.regno = parti3110.regno;
+
+  NUMBEROF
+----------
+         4
+
+SQL> select count(*) as NumberOf
+  2  from owns3110 , parti3110
+  3  where owns3110.regno = parti3110.regno and
+  4  rn = (select report_num from accident3110 where extract(year from accd_date
+) = 2015)
+  5  and parti3110.report_num = rn ;
+and parti3110.report_num = rn
+                           *
+ERROR at line 5:
+ORA-00904: "RN": invalid identifier
+
+
+SQL> select count(*) as NumberOf
+  2  from owns3110 , parti3110
+  3  where owns3110.regno = parti3110.regno and
+  4  report_num = (select report_num from accident3110 where extract(year from a
+ccd_date) = 2015)
+  5  and parti3110.report_num = report_num ;
+report_num = (select report_num from accident3110 where extract(year from accd_d
+ate) = 2015)
+              *
+ERROR at line 4:
+ORA-01427: single-row subquery returns more than one row
+
+
+SQL> select count( regno ) as NumberOf
+  2  from owns3110
+  3  where owns3110.regno = parti3110.regno and
+  4  report_num = (select report_num from accident3110 where extract(year from a
+ccd_date) = 2015)
+  5  and parti3110.report_num = report_num ;
+and parti3110.report_num = report_num
+                           *
+ERROR at line 5:
+ORA-00904: "REPORT_NUM": invalid identifier
+
+
+SQL> select count(report_num) from parti3110 where year = extract(year from accd
+_date) = 2015);
+select count(report_num) from parti3110 where year = extract(year from accd_date
+) = 2015)
+
+  *
+ERROR at line 1:
+ORA-00933: SQL command not properly ended
+
+
+SQL> select count(report_num) from accident3110 where year = extract(year from a
+ccd_date) = 2015);
+select count(report_num) from accident3110 where year = extract(year from accd_d
+ate) = 2015)
+
+     *
+ERROR at line 1:
+ORA-00933: SQL command not properly ended
+
+
+SQL>SQL> lab 4
+SP2-0042: unknown command "lab 4" - rest of line ignored.
+SQL> select name as onm , count(report_num)  as ano , sum(damg_amt
+  2  ;
+
+*
+ERROR at line 2:
+ORA-00907: missing right parenthesis
+
+
+SQL> select * from parti3110;
+
+DRIVER_ID  REGNO      REPORT_NUM    DAM_AMT
+---------- ---------- ---------- ----------
+1          11                111          0
+2          12                112          0
+4          14                114          0
+5          15                115          0
+
+SQL> select name as onm , count(report_num)  as ano , sum(dam_amt) as dmg
+  2  from person3110 , parti3110
+  3  where person3110.driver_id = parti3110.driver_id
+  4  group by(name , report_num , dam_amt)
+  5  order by amg desc();
+order by amg desc()
+                 *
+ERROR at line 5:
+ORA-00933: SQL command not properly ended
+
+
+SQL> select name as onm , count(report_num)  as ano , sum(dam_amt) as dmg ,
+  2  from person3110 , parti3110,
+  3  where person3110.driver_id = parti3110.driver_id,
+  4  group by(name , report_num , dam_amt),
+  5  order by amg desc();
+from person3110 , parti3110,
+*
+ERROR at line 2:
+ORA-00936: missing expression
+
+
+SQL> select name as onm , count(report_num)  as ano , sum(dam_amt) as dmg ,
+  2  from person3110 , parti3110
+  3  where person3110.driver_id = parti3110.driver_id
+  4  group by(name , report_num , dam_amt)
+  5  order by amg desc();
+from person3110 , parti3110
+*
+ERROR at line 2:
+ORA-00936: missing expression
+
+
+SQL> select name as onm , count(report_num)  as ano , sum(dam_amt) as dmg
+  2  from person3110 , parti3110
+  3  where person3110.driver_id = parti3110.driver_id
+  4  group by(name , report_num , dam_amt)
+  5  order by amg desc();
+order by amg desc()
+                 *
+ERROR at line 5:
+ORA-00933: SQL command not properly ended
+
+
+SQL> select name as onm , count(report_num)  as ano , sum(dam_amt) as dmg
+  2  from person3110 , parti3110
+  3  where person3110.driver_id = parti3110.driver_id
+  4  group by(name , report_num , dam_amt)
+  5  order by amg des();
+order by amg des()
+             *
+ERROR at line 5:
+ORA-00933: SQL command not properly ended
+
+
+SQL> select name as onm , count(report_num)  as ano , sum(dam_amt) as dmg
+  2  from person3110 , parti3110
+  3  where person3110.driver_id = parti3110.driver_id
+  4  group by(name , report_num , dam_amt)
+  5  order by dmg des();
+order by dmg des()
+             *
+ERROR at line 5:
+ORA-00933: SQL command not properly ended
+
+
+SQL> select name as onm , count(report_num)  as ano , sum(dam_amt) as dmg
+  2  from person3110 , parti3110
+  3  where person3110.driver_id = parti3110.driver_id
+  4  group by(name , report_num , dam_amt)
+  5  order by dmg desc();
+order by dmg desc()
+                 *
+ERROR at line 5:
+ORA-00933: SQL command not properly ended
+
+
+SQL> select name as onm , count(report_num)  as ano , sum(dam_amt) as dmg
+  2  from person3110 , parti3110
+  3  where person3110.driver_id = parti3110.driver_id
+  4  group by ( name , report_num , dam_amt)
+  5  order by dmg desc();
+order by dmg desc()
+                 *
+ERROR at line 5:
+ORA-00933: SQL command not properly ended
+
+
+SQL> select name as onm , count(report_num)  as ano , sum(dam_amt) as dmg
+  2  from person3110 , parti3110
+  3  where person3110.driver_id = parti3110.driver_id
+  4  group by(name , report_num , dam_amt)
+  5  order by dmg desc;
+
+ONM                         ANO        DMG
+-------------------- ---------- ----------
+Akshay                        1          0
+Adhish                        1          0
+Aakash                        1          0
+Haran                         1          0
+
+SQL> commit;
+
+Commit complete.
+
+SQL> select name as nm
+  2  from person3110 , parti3110
+  3  where person3110.driver_id <> parti3110.driver_id
+  4  ;
+
+NM
+--------------------
+Akshay
+Akshay
+Akshay
+Adhish
+Adhish
+Adhish
+Kartik
+Kartik
+Kartik
+Kartik
+Haran
+
+NM
+--------------------
+Haran
+Haran
+Aakash
+Aakash
+Aakash
+
+16 rows selected.
+
+SQL> count(regno) as r
+SP2-0734: unknown command beginning "count(regn..." - rest of line ignored.
+SQL> count(regno) as r
+SP2-0734: unknown command beginning "count(regn..." - rest of line ignored.
+SQL> select count(regno) as r
+  2  from owns3110 , parti3110
+  3  where owns3110.regno = parti3110;
+where owns3110.regno = parti3110
+                       *
+ERROR at line 3:
+ORA-00904: "PARTI3110": invalid identifier
+
+
+SQL> select count(regno) as r
+  2  from owns3110 , parti3110
+  3  where owns3110.regno = parti3110.regno;
+select count(regno) as r
+             *
+ERROR at line 1:
+ORA-00918: column ambiguously defined
+
+
+SQL> select count(*)
+  2  from owns3110 , parti3110
+  3  where owns3110.regno = parti3110.regno;
+
+  COUNT(*)
+----------
+         4
+
+SQL> select count(*) as NumberOf
+  2  from owns3110 , parti3110
+  3  where owns3110.regno = parti3110.regno;
+
+  NUMBEROF
+----------
+         4
+
+SQL> select count(*) as NumberOf
+  2  from owns3110 , parti3110
+  3  where owns3110.regno = parti3110.regno and
+  4  rn = (select report_num from accident3110 where extract(year from accd_date
+) = 2015)
+  5  and parti3110.report_num = rn ;
+and parti3110.report_num = rn
+                           *
+ERROR at line 5:
+ORA-00904: "RN": invalid identifier
+
+
+SQL> select count(*) as NumberOf
+  2  from owns3110 , parti3110
+  3  where owns3110.regno = parti3110.regno and
+  4  report_num = (select report_num from accident3110 where extract(year from a
+ccd_date) = 2015)
+  5  and parti3110.report_num = report_num ;
+report_num = (select report_num from accident3110 where extract(year from accd_d
+ate) = 2015)
+              *
+ERROR at line 4:
+ORA-01427: single-row subquery returns more than one row
+
+
+SQL> select count( regno ) as NumberOf
+  2  from owns3110
+  3  where owns3110.regno = parti3110.regno and
+  4  report_num = (select report_num from accident3110 where extract(year from a
+ccd_date) = 2015)
+  5  and parti3110.report_num = report_num ;
+and parti3110.report_num = report_num
+                           *
+ERROR at line 5:
+ORA-00904: "REPORT_NUM": invalid identifier
+
+
+SQL> select count(report_num) from parti3110 where year = extract(year from accd
+_date) = 2015);
+select count(report_num) from parti3110 where year = extract(year from accd_date
+) = 2015)
+
+  *
+ERROR at line 1:
+ORA-00933: SQL command not properly ended
+
+
+SQL> select count(report_num) from accident3110 where year = extract(year from a
+ccd_date) = 2015);
+select count(report_num) from accident3110 where year = extract(year from accd_d
+ate) = 2015)
+
+     *
+ERROR at line 1:
+ORA-00933: SQL command not properly ended
+
+
+SQL>SQL> lab 4
+SP2-0042: unknown command "lab 4" - rest of line ignored.
+SQL> select name as onm , count(report_num)  as ano , sum(damg_amt
+  2  ;
+
+*
+ERROR at line 2:
+ORA-00907: missing right parenthesis
+
+
+SQL> select * from parti3110;
+
+DRIVER_ID  REGNO      REPORT_NUM    DAM_AMT
+---------- ---------- ---------- ----------
+1          11                111          0
+2          12                112          0
+4          14                114          0
+5          15                115          0
+
+SQL> select name as onm , count(report_num)  as ano , sum(dam_amt) as dmg
+  2  from person3110 , parti3110
+  3  where person3110.driver_id = parti3110.driver_id
+  4  group by(name , report_num , dam_amt)
+  5  order by amg desc();
+order by amg desc()
+                 *
+ERROR at line 5:
+ORA-00933: SQL command not properly ended
+
+
+SQL> select name as onm , count(report_num)  as ano , sum(dam_amt) as dmg ,
+  2  from person3110 , parti3110,
+  3  where person3110.driver_id = parti3110.driver_id,
+  4  group by(name , report_num , dam_amt),
+  5  order by amg desc();
+from person3110 , parti3110,
+*
+ERROR at line 2:
+ORA-00936: missing expression
+
+
+SQL> select name as onm , count(report_num)  as ano , sum(dam_amt) as dmg ,
+  2  from person3110 , parti3110
+  3  where person3110.driver_id = parti3110.driver_id
+  4  group by(name , report_num , dam_amt)
+  5  order by amg desc();
+from person3110 , parti3110
+*
+ERROR at line 2:
+ORA-00936: missing expression
+
+
+SQL> select name as onm , count(report_num)  as ano , sum(dam_amt) as dmg
+  2  from person3110 , parti3110
+  3  where person3110.driver_id = parti3110.driver_id
+  4  group by(name , report_num , dam_amt)
+  5  order by amg desc();
+order by amg desc()
+                 *
+ERROR at line 5:
+ORA-00933: SQL command not properly ended
+
+
+SQL> select name as onm , count(report_num)  as ano , sum(dam_amt) as dmg
+  2  from person3110 , parti3110
+  3  where person3110.driver_id = parti3110.driver_id
+  4  group by(name , report_num , dam_amt)
+  5  order by amg des();
+order by amg des()
+             *
+ERROR at line 5:
+ORA-00933: SQL command not properly ended
+
+
+SQL> select name as onm , count(report_num)  as ano , sum(dam_amt) as dmg
+  2  from person3110 , parti3110
+  3  where person3110.driver_id = parti3110.driver_id
+  4  group by(name , report_num , dam_amt)
+  5  order by dmg des();
+order by dmg des()
+             *
+ERROR at line 5:
+ORA-00933: SQL command not properly ended
+
+
+SQL> select name as onm , count(report_num)  as ano , sum(dam_amt) as dmg
+  2  from person3110 , parti3110
+  3  where person3110.driver_id = parti3110.driver_id
+  4  group by(name , report_num , dam_amt)
+  5  order by dmg desc();
+order by dmg desc()
+                 *
+ERROR at line 5:
+ORA-00933: SQL command not properly ended
+
+
+SQL> select name as onm , count(report_num)  as ano , sum(dam_amt) as dmg
+  2  from person3110 , parti3110
+  3  where person3110.driver_id = parti3110.driver_id
+  4  group by ( name , report_num , dam_amt)
+  5  order by dmg desc();
+order by dmg desc()
+                 *
+ERROR at line 5:
+ORA-00933: SQL command not properly ended
+
+
+SQL> select name as onm , count(report_num)  as ano , sum(dam_amt) as dmg
+  2  from person3110 , parti3110
+  3  where person3110.driver_id = parti3110.driver_id
+  4  group by(name , report_num , dam_amt)
+  5  order by dmg desc;
+
+ONM                         ANO        DMG
+-------------------- ---------- ----------
+Akshay                        1          0
+Adhish                        1          0
+Aakash                        1          0
+Haran                         1          0
+
+SQL> commit;
+
+Commit complete.
+
+SQL> select name as nm
+  2  from person3110 , parti3110
+  3  where person3110.driver_id <> parti3110.driver_id
+  4  ;
+
+NM
+--------------------
+Akshay
+Akshay
+Akshay
+Adhish
+Adhish
+Adhish
+Kartik
+Kartik
+Kartik
+Kartik
+Haran
+
+NM
+--------------------
+Haran
+Haran
+Aakash
+Aakash
+Aakash
+
+16 rows selected.
+
+SQL> count(regno) as r
+SP2-0734: unknown command beginning "count(regn..." - rest of line ignored.
+SQL> count(regno) as r
+SP2-0734: unknown command beginning "count(regn..." - rest of line ignored.
+SQL> select count(regno) as r
+  2  from owns3110 , parti3110
+  3  where owns3110.regno = parti3110;
+where owns3110.regno = parti3110
+                       *
+ERROR at line 3:
+ORA-00904: "PARTI3110": invalid identifier
+
+
+SQL> select count(regno) as r
+  2  from owns3110 , parti3110
+  3  where owns3110.regno = parti3110.regno;
+select count(regno) as r
+             *
+ERROR at line 1:
+ORA-00918: column ambiguously defined
+
+
+SQL> select count(*)
+  2  from owns3110 , parti3110
+  3  where owns3110.regno = parti3110.regno;
+
+  COUNT(*)
+----------
+         4
+
+SQL> select count(*) as NumberOf
+  2  from owns3110 , parti3110
+  3  where owns3110.regno = parti3110.regno;
+
+  NUMBEROF
+----------
+         4
+
+SQL> select count(*) as NumberOf
+  2  from owns3110 , parti3110
+  3  where owns3110.regno = parti3110.regno and
+  4  rn = (select report_num from accident3110 where extract(year from accd_date
+) = 2015)
+  5  and parti3110.report_num = rn ;
+and parti3110.report_num = rn
+                           *
+ERROR at line 5:
+ORA-00904: "RN": invalid identifier
+
+
+SQL> select count(*) as NumberOf
+  2  from owns3110 , parti3110
+  3  where owns3110.regno = parti3110.regno and
+  4  report_num = (select report_num from accident3110 where extract(year from a
+ccd_date) = 2015)
+  5  and parti3110.report_num = report_num ;
+report_num = (select report_num from accident3110 where extract(year from accd_d
+ate) = 2015)
+              *
+ERROR at line 4:
+ORA-01427: single-row subquery returns more than one row
+
+
+SQL> select count( regno ) as NumberOf
+  2  from owns3110
+  3  where owns3110.regno = parti3110.regno and
+  4  report_num = (select report_num from accident3110 where extract(year from a
+ccd_date) = 2015)
+  5  and parti3110.report_num = report_num ;
+and parti3110.report_num = report_num
+                           *
+ERROR at line 5:
+ORA-00904: "REPORT_NUM": invalid identifier
+
+
+SQL> select count(report_num) from parti3110 where year = extract(year from accd
+_date) = 2015);
+select count(report_num) from parti3110 where year = extract(year from accd_date
+) = 2015)
+
+  *
+ERROR at line 1:
+ORA-00933: SQL command not properly ended
+
+
+SQL> select count(report_num) from accident3110 where year = extract(year from a
+ccd_date) = 2015);
+select count(report_num) from accident3110 where year = extract(year from accd_d
+ate) = 2015)
+
+     *
+ERROR at line 1:
+ORA-00933: SQL command not properly ended
+
+
+SQL>
+SQL> select name from person3110
+  2  where driver_id = ((select driver_id from person3110) minus
+  3  (select driver_id from parti3110));
+
+NAME
+--------------------
+Kartik
+
+SQL>

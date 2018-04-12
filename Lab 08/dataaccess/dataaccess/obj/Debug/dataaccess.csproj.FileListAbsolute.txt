@@ -1,0 +1,20 @@
+E:\akshaydbs\Lab 5\dataaccess\dataaccess\bin\Debug\dataaccess.exe.config
+E:\akshaydbs\Lab 5\dataaccess\dataaccess\bin\Debug\dataaccess.exe
+E:\akshaydbs\Lab 5\dataaccess\dataaccess\bin\Debug\dataaccess.pdb
+E:\akshaydbs\Lab 5\dataaccess\dataaccess\bin\Debug\Oracle.DataAccess.dll
+E:\akshaydbs\Lab 5\dataaccess\dataaccess\obj\Debug\dataaccess.csprojResolveAssemblyReference.cache
+E:\akshaydbs\Lab 5\dataaccess\dataaccess\obj\Debug\dataaccess.Form1.resources
+E:\akshaydbs\Lab 5\dataaccess\dataaccess\obj\Debug\dataaccess.Properties.Resources.resources
+E:\akshaydbs\Lab 5\dataaccess\dataaccess\obj\Debug\dataaccess.csproj.GenerateResource.Cache
+E:\akshaydbs\Lab 5\dataaccess\dataaccess\obj\Debug\dataaccess.exe
+E:\akshaydbs\Lab 5\dataaccess\dataaccess\obj\Debug\dataaccess.pdb
+C:\Users\AKSHAY\Desktop\all docs\Sem #5\DBS Lab\Lab 08\dataaccess\dataaccess\bin\Debug\dataaccess.exe.config
+C:\Users\AKSHAY\Desktop\all docs\Sem #5\DBS Lab\Lab 08\dataaccess\dataaccess\bin\Debug\dataaccess.exe
+C:\Users\AKSHAY\Desktop\all docs\Sem #5\DBS Lab\Lab 08\dataaccess\dataaccess\bin\Debug\dataaccess.pdb
+C:\Users\AKSHAY\Desktop\all docs\Sem #5\DBS Lab\Lab 08\dataaccess\dataaccess\obj\Debug\dataaccess.csprojResolveAssemblyReference.cache
+C:\Users\AKSHAY\Desktop\all docs\Sem #5\DBS Lab\Lab 08\dataaccess\dataaccess\obj\Debug\dataaccess.Form1.resources
+C:\Users\AKSHAY\Desktop\all docs\Sem #5\DBS Lab\Lab 08\dataaccess\dataaccess\obj\Debug\dataaccess.Properties.Resources.resources
+C:\Users\AKSHAY\Desktop\all docs\Sem #5\DBS Lab\Lab 08\dataaccess\dataaccess\obj\Debug\dataaccess.csproj.GenerateResource.Cache
+C:\Users\AKSHAY\Desktop\all docs\Sem #5\DBS Lab\Lab 08\dataaccess\dataaccess\obj\Debug\dataaccess.csproj.CoreCompileInputs.cache
+C:\Users\AKSHAY\Desktop\all docs\Sem #5\DBS Lab\Lab 08\dataaccess\dataaccess\obj\Debug\dataaccess.exe
+C:\Users\AKSHAY\Desktop\all docs\Sem #5\DBS Lab\Lab 08\dataaccess\dataaccess\obj\Debug\dataaccess.pdb

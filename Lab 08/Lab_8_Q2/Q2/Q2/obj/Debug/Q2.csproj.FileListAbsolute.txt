@@ -1,0 +1,29 @@
+C:\Users\AKSHAY\Desktop\all docs\Sem #5\DBS Lab\Lab 08\Lab_8_Q2\Q2\Q2\bin\Debug\Q2.exe.config
+C:\Users\AKSHAY\Desktop\all docs\Sem #5\DBS Lab\Lab 08\Lab_8_Q2\Q2\Q2\bin\Debug\Q2.exe
+C:\Users\AKSHAY\Desktop\all docs\Sem #5\DBS Lab\Lab 08\Lab_8_Q2\Q2\Q2\bin\Debug\Q2.pdb
+C:\Users\AKSHAY\Desktop\all docs\Sem #5\DBS Lab\Lab 08\Lab_8_Q2\Q2\Q2\bin\Debug\MySql.Data.dll
+C:\Users\AKSHAY\Desktop\all docs\Sem #5\DBS Lab\Lab 08\Lab_8_Q2\Q2\Q2\bin\Debug\MySql.Web.dll
+C:\Users\AKSHAY\Desktop\all docs\Sem #5\DBS Lab\Lab 08\Lab_8_Q2\Q2\Q2\bin\Debug\MySql.Data.xml
+C:\Users\AKSHAY\Desktop\all docs\Sem #5\DBS Lab\Lab 08\Lab_8_Q2\Q2\Q2\bin\Debug\MySql.Web.xml
+C:\Users\AKSHAY\Desktop\all docs\Sem #5\DBS Lab\Lab 08\Lab_8_Q2\Q2\Q2\obj\Debug\Q2.csprojResolveAssemblyReference.cache
+C:\Users\AKSHAY\Desktop\all docs\Sem #5\DBS Lab\Lab 08\Lab_8_Q2\Q2\Q2\obj\Debug\Q2.Form1.resources
+C:\Users\AKSHAY\Desktop\all docs\Sem #5\DBS Lab\Lab 08\Lab_8_Q2\Q2\Q2\obj\Debug\Q2.Properties.Resources.resources
+C:\Users\AKSHAY\Desktop\all docs\Sem #5\DBS Lab\Lab 08\Lab_8_Q2\Q2\Q2\obj\Debug\Q2.csproj.GenerateResource.Cache
+C:\Users\AKSHAY\Desktop\all docs\Sem #5\DBS Lab\Lab 08\Lab_8_Q2\Q2\Q2\obj\Debug\Q2.exe
+C:\Users\AKSHAY\Desktop\all docs\Sem #5\DBS Lab\Lab 08\Lab_8_Q2\Q2\Q2\obj\Debug\Q2.pdb
+C:\Users\AKSHAY\Desktop\all docs\Sem #5\DBS Lab\Lab 08\Lab_8_Q2\Q2\Q2\obj\Debug\Q2.csproj.CoreCompileInputs.cache
+E:\alldocs\Sem#5\DBSLab\Lab 08\Lab_8_Q2\Q2\Q2\bin\Debug\Q2.exe.config
+E:\alldocs\Sem#5\DBSLab\Lab 08\Lab_8_Q2\Q2\Q2\bin\Debug\Q2.exe
+E:\alldocs\Sem#5\DBSLab\Lab 08\Lab_8_Q2\Q2\Q2\bin\Debug\Q2.pdb
+E:\alldocs\Sem#5\DBSLab\Lab 08\Lab_8_Q2\Q2\Q2\bin\Debug\MySql.Data.dll
+E:\alldocs\Sem#5\DBSLab\Lab 08\Lab_8_Q2\Q2\Q2\bin\Debug\MySql.Web.dll
+E:\alldocs\Sem#5\DBSLab\Lab 08\Lab_8_Q2\Q2\Q2\bin\Debug\MySql.Data.xml
+E:\alldocs\Sem#5\DBSLab\Lab 08\Lab_8_Q2\Q2\Q2\bin\Debug\MySql.Web.xml
+E:\alldocs\Sem#5\DBSLab\Lab 08\Lab_8_Q2\Q2\Q2\obj\Debug\Q2.csprojResolveAssemblyReference.cache
+E:\alldocs\Sem#5\DBSLab\Lab 08\Lab_8_Q2\Q2\Q2\obj\Debug\Q2.Form1.resources
+E:\alldocs\Sem#5\DBSLab\Lab 08\Lab_8_Q2\Q2\Q2\obj\Debug\Q2.Properties.Resources.resources
+E:\alldocs\Sem#5\DBSLab\Lab 08\Lab_8_Q2\Q2\Q2\obj\Debug\Q2.csproj.GenerateResource.cache
+E:\alldocs\Sem#5\DBSLab\Lab 08\Lab_8_Q2\Q2\Q2\obj\Debug\Q2.csproj.CoreCompileInputs.cache
+E:\alldocs\Sem#5\DBSLab\Lab 08\Lab_8_Q2\Q2\Q2\obj\Debug\Q2.csproj.CopyComplete
+E:\alldocs\Sem#5\DBSLab\Lab 08\Lab_8_Q2\Q2\Q2\obj\Debug\Q2.exe
+E:\alldocs\Sem#5\DBSLab\Lab 08\Lab_8_Q2\Q2\Q2\obj\Debug\Q2.pdb
